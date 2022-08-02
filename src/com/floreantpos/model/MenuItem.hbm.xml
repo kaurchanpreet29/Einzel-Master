@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+	<class lazy="false" name="com.floreantpos.model.MenuItem" optimistic-lock="version" table="MENU_ITEM">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		<version column="MODIFIED_TIME" name="modifiedTime" type="timestamp" />
+		<property column="NAME" length="300" name="name" not-null="true" type="java.lang.String" />
+		<property column="ITEMID" length="40" name="itemId" type="java.lang.String" />
+		<property column="SUBITEMID" length="40" name="subitemid" type="java.lang.String" />
+		<property column="BARCODE" length="120" name="barcode" type="java.lang.String" />
+		<property column="RED" name="red" type="java.lang.Integer" />
+		<property column="GREEN" name="green" type="java.lang.Integer" />
+		 
+		<property column="LIFERANT_NAME" length="300" name="lieferantName" type="java.lang.String" />
+		<property column="BLUE" name="blue" type="java.lang.Integer" />
+		<property column="FRED" name="fred" type="java.lang.Integer" />
+		<property column="FGREEN" name="fgreen" type="java.lang.Integer" />
+		<property column="FBLUE" name="fblue" type="java.lang.Integer" />
+		<property column="BUY_PRICE" length="52" name="buyPrice" not-null="true" type="java.lang.Double" />
+		<property column="LIFERANT_BUY_PRICE" length="52" name="liferantBuyPrice" type="java.lang.Double" />
+		   
+		<property column="PRICE" length="52" name="price" not-null="true" type="java.lang.Double" />
+		<property column="DISCOUNT_RATE" length="52" name="discountRate" type="java.lang.Double" />
+		<property column="DESCRIPTION" length="500" name="description" type="java.lang.String" />
+		<property column="DESCRIPTION2" length="500" name="description2" type="java.lang.String" />
+		<property column="NOTE" length="50" name="note" type="java.lang.String" />
+		<property column="VISIBLE" name="visible" type="java.lang.Boolean">
+			<meta attribute="defaultValue">true</meta>
+		</property>
+		<property column="CHANGEPRICE" name="changeprice" type="java.lang.Boolean">
+			<meta attribute="defaultValue">false</meta>
+		</property>
+		<property column="INSTOCK" name="instock" type="java.lang.Integer" />
+		<property column="SOLD" name="sold" type="java.lang.Integer" />
+		<property column="DAMAGED" name="damaged" type="java.lang.Integer" />
+		
+		<property column="WEIGHTGRAMS" name="weightgrams" type="java.lang.Double">
+		 <meta attribute="defaultValue">0</meta>
+		</property>			
+		<property name="image" column="IMAGE" not-null="false" type="binary" length="20480" />
+		<property name="showImageOnly" column="SHOW_IMAGE_ONLY" type="java.lang.Boolean" />
+		<property column="PRICE_CATEGORY" name="priceCategory" type="java.lang.Integer" />
+		<property column="UNIT_TYPE" length="100" name="unitType" type="java.lang.String" />
+		<property column="PFAND" name="pfand" type="java.lang.Boolean" />
+		<property column="BARCODE1" length="120" name="barcode1" type="java.lang.String" />
+		<property column="BARCODE2" length="120" name="barcode2" type="java.lang.String" />
+		<!-- <property name="smallImage" column="SMALL_IMAGE" length="120" not-null="false" type="string"/> <property name="largeImage" column="LARGE_IMAGE" length="120" 
+			not-null="false" type="string"/> -->
+		<!-- uni-directional many-to-one association to FoodGroup -->
+		<many-to-one class="com.floreantpos.model.MenuGroup" name="parent">
+			<column name="GROUP_ID" />
+		</many-to-one>
+		<list cascade="all" inverse="false" lazy="true" name="shifts" table="MENUITEM_SHIFT">
+			<key column="MENUITEM_ID" />
+			<list-index column="SHIFT_ORDER" />
+			<one-to-many class="MenuItemShift" />
+		</list>
+		<list cascade="all" inverse="false" lazy="true" name="menuItemModiferGroups">
+			<key>
+				<column name="MENUITEM_MODIFIERGROUP_ID" />
+			</key>
+			<list-index column="GR_ORDER" />
+			<one-to-many class="MenuItemModifierGroup" />
+		</list>
+		<!-- uni-directional many-to-one association to Tax -->
+		<many-to-one class="com.floreantpos.model.Tax" lazy="false" name="tax">
+			<column name="TAX_ID" />
+		</many-to-one>
+		<list cascade="all" inverse="false" lazy="true" name="menuitemprice">
+			<key column="MENUITEM_ID" />
+			<list-index column="MENU_ITEM_PRICE" />
+			<one-to-many class="MenuItemPrice" />
+		</list>
+		<many-to-one class="com.floreantpos.model.inventory.Recepie" lazy="false" cascade="all" name="recepie">
+			<column name="RECEPIE" />
+		</many-to-one>
+		
+		<many-to-one class="com.floreantpos.model.VirtualPrinter" lazy="false" cascade="none" name="virtualPrinter">
+			<column name="VPRINTER_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

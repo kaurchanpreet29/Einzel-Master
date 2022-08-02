@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TseCertificate" pageWidth="340" pageHeight="283" columnWidth="301" leftMargin="20" rightMargin="19" topMargin="3" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true" isFloatColumnFooter="true" whenResourceMissingType="Empty">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.6934217901613322"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="barcode" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="qrcode" class="java.io.InputStream"/>
+	<parameter name="tse_idnr" class="java.lang.String"/>
+	<parameter name="tse_valid_till" class="java.lang.String"/>
+	<parameter name="tse_provider" class="java.lang.String"/>
+	<parameter name="tse_qrcode" class="java.io.InputStream"/>
+	<parameter name="tse_provider_certificate" class="java.lang.String"/>
+	<parameter name="tse_serialnumber" class="java.lang.String"/>
+	<field name="itemQty" class="java.lang.String"/>
+	<field name="itemName" class="java.lang.String"/>
+	<field name="itemSubtotal" class="java.lang.String"/>
+	<field name="ItemId" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="250">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="" x="260" y="2" width="32" height="19" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{type}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="none">
+					<font fontName="Arial Narrow" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="89" y="96" width="203" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_provider_certificate}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tse_provider_certificate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-8" x="3" y="32" width="57" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TSE-ID Nr.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="3" y="67" width="69" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Zertifikat gültig bis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="3" y="96" width="69" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Zertifikats-ID:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="89" y="81" width="203" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_provider}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tse_provider}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-8" x="3" y="81" width="69" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Hersteller:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="3" y="116" width="83" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TSE-Seriennummer:]]></text>
+			</staticText>
+			<image scaleImage="RealSize" hAlign="Center">
+				<reportElement x="7" y="160" width="78" height="62" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_qrcode}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{tse_qrcode}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="89" y="32" width="203" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_idnr}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tse_idnr}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="89" y="67" width="203" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_valid_till}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tse_valid_till}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="88" y="116" width="203" height="33" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{tse_serialnumber}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tse_serialnumber}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Left" vAlign="Bottom">
+				<reportElement x="89" y="47" width="203" height="19" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{barcode}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-8" x="1" y="2" width="259" height="19" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Technische Sicherheitseinrichtung (TSE)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" x="103" y="214" width="98" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Arial Narrow" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Kassen-Seriennr.]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="103" y="211" width="140" height="1" isRemoveLineWhenBlank="true" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+</jasperReport>

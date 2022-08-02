@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+	<class lazy="false" name="com.floreantpos.model.Gebiet" table="DELIVERYCOST">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		<property name="bezirk" column="BEZIRK" type="java.lang.String" />
+		<property name="lieferkosten" column="LIEFERKOSTEN" type="java.lang.Double" />
+		<property name="lieferzeit" column="LIEFERZEIT" type="java.lang.Integer" />
+		<property name="mindest" column="MINDEST" type="java.lang.Double" />
+		<property name="isopen" column="ISOPEN" type="java.lang.Boolean" />
+		<property name="ort" column="ORT" type="java.lang.String" />
+		<property name="plz" column="PLZ" length="8" type="java.lang.Integer" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketReceiptReport" pageWidth="240" pageHeight="420" whenNoDataType="BlankPage" columnWidth="208" leftMargin="16" rightMargin="16" topMargin="0" bottomMargin="14" isFloatColumnFooter="true" isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="idText" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="firstNameText" class="java.lang.String"/>
+	<parameter name="firstName" class="java.lang.String"/>
+	<parameter name="lastNameText" class="java.lang.String"/>
+	<parameter name="lastName" class="java.lang.String"/>
+	<parameter name="headerLine1" class="java.lang.String"/>
+	<parameter name="headerLine2" class="java.lang.String"/>
+	<parameter name="headerLine3" class="java.lang.String"/>
+	<parameter name="headerLine4" class="java.lang.String"/>
+	<parameter name="headerLine5" class="java.lang.String"/>
+	<parameter name="barcode" class="java.io.InputStream"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" x="0" y="0" width="193" height="18" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-13" x="0" y="18" width="193" height="14" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-14" x="0" y="32" width="193" height="14" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-15" x="0" y="46" width="193" height="14" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-16" x="2" y="60" width="191" height="14" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="4" y="81" width="193" height="1" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[Boolean.valueOf(String.valueOf($V{PAGE_NUMBER}).equals("1"))]]></printWhenExpression>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band splitType="Prevent"/>
+	</lastPageFooter>
+	<summary>
+		<band height="185" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-6" x="-9" y="31" width="107" height="13" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{firstNameText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="111" y="16" width="77" height="15" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="111" y="31" width="77" height="13" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{firstName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-7" x="6" y="16" width="92" height="16" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{idText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-6" x="-9" y="44" width="107" height="13" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{lastNameText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="111" y="44" width="77" height="13" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{lastName}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center">
+				<reportElement x="6" y="76" width="189" height="34" isRemoveLineWhenBlank="true"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

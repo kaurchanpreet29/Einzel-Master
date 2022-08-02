@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProductLableDesign" pageWidth="170" pageHeight="226" whenNoDataType="BlankPage" columnWidth="170" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="itemName" class="java.lang.String"/>
+	<parameter name="itemPrice" class="java.lang.String"/>
+	<parameter name="itemId" class="java.lang.String"/>
+	<parameter name="barcode" class="java.io.InputStream"/>
+	<parameter name="infoLable" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="220" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="102" y="26" width="61" height="22">
+					<printWhenExpression><![CDATA[$P{itemPrice}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="19" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemPrice}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="5" y="8" width="158" height="18" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$P{itemName}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="html">
+					<font fontName="DejaVu Sans Mono" size="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemName}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Bottom" isUsingCache="true" isLazy="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="49" width="170" height="35">
+					<printWhenExpression><![CDATA[$P{barcode}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="5" y="26" width="97" height="22" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{infoLable}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="html">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{infoLable}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false"
+	package="com.floreantpos.model">
+	<class lazy="false" name="Salesreportdb" table="SALESREPORTDB">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="assigned" />
+		</id>
+		<property column="SALESID" name="salesid" type="java.lang.Integer" />
+		<property column="STARTDATE" name="startdate" type="java.util.Date" />
+		<property column="ENDDATE" name="enddate" type="java.util.Date" />
+		<property column="REPORTTIME" name="reporttime" type="java.lang.String" />
+		<property column="AWT" name="awt" type="java.lang.Double" />
+		<property column="AWTN" name="awtn" type="java.lang.Double" />
+		<property column="AWTS" name="awts" type="java.lang.Double" />
+		<property column="AWTZ" name="awtz" type="java.lang.Double" />
+		<property column="CASHPAYMENT" name="cashpayment" type="java.lang.Double" />
+		<property column="SOLD_GUTSCHEIN" name="soldGutschein" type="java.lang.Double" />
+		<property column="CASHPAYMENTCOUNT" name="cashpaymentcount"
+			type="java.lang.Integer" />
+		<property column="CASHTAX" name="cashtax" type="java.lang.Double" />
+		<property column="CARDPAYMENT" name="cardpayment" type="java.lang.Double" />
+		<property column="CARDPAYMENTCOUNT" name="cardpaymentcount"
+			type="java.lang.Integer" />
+		<property column="CARDTAX" name="cardtax" type="java.lang.Double" />
+		<property column="ONLINE" name="online" type="java.lang.Double" />
+		<property column="ONLINETAX" name="onlinetax" type="java.lang.Double" />
+		<property column="FOOD" name="food" type="java.lang.Double" />
+		<property column="FOODTAX" name="foodtax" type="java.lang.Double" />
+		<property column="BEVERAGE" name="beverage" type="java.lang.Double" />
+		<property column="BEVERAGETAX" name="beveragetax" type="java.lang.Double" />
+		<property column="CANCELLEDITEMS" name="cancelleditems" type="java.lang.Integer" />
+		<property column="SOLDITEM" name="solditem" type="java.lang.Integer" />
+		<property column="TOTALWOTAX" name="totalwotax" type="java.lang.Double" />
+		<property column="TAXTOTAL" name="taxtotal" type="java.lang.Double" />
+		<property column="TAXN" name="taxn" type="java.lang.Double" />
+		<property column="TAXS" name="taxs" type="java.lang.Double" />
+		<property column="TAXZ" name="taxz" type="java.lang.Double" />
+		<property column="CANCELLEDTRANS" name="cancelledtrans" type="java.lang.Double" />
+		<property column="CANCELLEDTAX" name="cancelledtax" type="java.lang.Double" />
+		<property column="DISCOUNT" name="discount" type="java.lang.Double" />
+		<property column="INSERTTICKET" name="insertticket" type="java.lang.Integer" />
+		<property column="INSERTAMOUNT" name="insertamount" type="java.lang.Double" />
+		<property column="VOIDTICKET" name="voidticket" type="java.lang.Double" />
+		<property column="VOIDAMOUNT" name="voidamount" type="java.lang.Double" />
+		<property column="VOIDTAX" name="voidtax" type="java.lang.Double" />
+		<property column="PFAND1" name="pfand1" type="java.lang.Double" />
+		<property column="PFAND2" name="pfand2" type="java.lang.Double" />
+		<property column="PFAND3" name="pfand3" type="java.lang.Double" />
+		
+		<property column="RABATT_19" name="rabatt_19" type="java.lang.Double" />
+		<property column="RABATT_7" name="rabatt_7" type="java.lang.Double" />
+		
+		<property column="NETTON" name="netton" type="java.lang.Double" />
+		<property column="NETTOS" name="nettos" type="java.lang.Double" />
+		<property column="NETTOZ" name="nettoz" type="java.lang.Double" />
+		
+		<property column="RETURN_ITMES" name="anzahlRetour" type="java.lang.Integer" />		
+		<property column="RETURN_AMNT" name="retourGesamt" type="java.lang.Double" />
+		<property column="RETURN_TAX" name="retourTax" type="java.lang.Double" />
+		<property column="TOTAL_SUM" name="gesamtSumme" type="java.lang.Double" />
+		<property column="SUMME_MWST_19" name="gesamtMwst19" type="java.lang.Double" />
+		<property column="SUMME_MWST_7" name="gesamtMwst7" type="java.lang.Double" />
+		
+		<property column="RECH_PAYMENT_TOTAL" name="rechnugPaymentAmount" type="java.lang.Double" />
+		<property column="RECH_PAYMENT_TAX" name="rechnugPayment_tax" type="java.lang.Double" />
+		<property column="RECH_PAYMENT_COUNT" name="rechnugPament_anzahl" type="java.lang.Integer" />
+		<property column="TICKETGUTSCHEINAMOUNT" name="ticketgutscheinamount"
+			type="java.lang.Double" />
+		<property column="TOTALINVOICES" name="totalinvoices" type="java.lang.Double" />
+		<property column="BAR_TRINGELD" name="btrinkgeld" type="java.lang.Double" />
+		<property column="KARTE_TRINGELD" name="Ktrinkgeld" type="java.lang.Double" />
+		<property column="G_DINE_IN_T" name="gesamt_19_text" type="java.lang.String" />
+		<property column="G_HOME_DELEVERY_T" name="gesamt_7_text" type="java.lang.String" />
+		<property column="G_ZERO_T" name="gesamt_0_text" type="java.lang.String" />
+		<property column="N_DINE_IN_T" name="netto_19_text" type="java.lang.String" />
+		<property column="N_HOME_DELEVERY_T" name="netto_7_text" type="java.lang.String" />
+		<property column="N_ZERO_T" name="netto_0_text" type="java.lang.String" />
+		<property column="M_DINE_IN_T" name="mwst_19_text" type="java.lang.String" />
+		<property column="M_HOME_DELEVERY_T" name="mwst_7_text" type="java.lang.String" />
+		<property column="M_ZERO_T" name="mwst_0_text" type="java.lang.String" />
+		<property column="CASHT1" name="cash19" type="java.lang.Double" />
+		<property column="CASHT2" name="cash7" type="java.lang.Double" />
+		<property column="CARDT1" name="card19" type="java.lang.Double" />
+		<property column="CARDT2" name="card7" type="java.lang.Double" />
+		<property column="CASH_19T" name="cash19Text" type="java.lang.String" />
+		<property column="CASH_7T" name="cash7Text" type="java.lang.String" />
+		<property column="CARD_19T" name="card19Text" type="java.lang.String" />
+		<property column="CARD_7T" name="card7Text" type="java.lang.String" />	
+				
+		
+		<list cascade="all" inverse="false" lazy="true" name="menuUsages">
+			<key>
+				<column name="MENU_USAGE_ID" />
+			</key>
+			<list-index column="USAGE_ORDER" />
+			<one-to-many class="com.floreantpos.model.MenuUsage" />
+		</list>
+	</class>
+</hibernate-mapping>

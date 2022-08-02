@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane minHeight="768.0" minWidth="1024.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.khana.gross.handle.GrossHandelController">
+   <children>
+      <Pane layoutX="11.0" layoutY="637.0" minHeight="125.0" minWidth="999.0" style="-fx-background-color: #bbbfbc;" />
+      <Button id="btnPosTerminal" fx:id="btnPosTerminal" layoutX="11.0" layoutY="10.0" minHeight="35.0" minWidth="400.0" mnemonicParsing="false" onAction="#increaseCount" style="-fx-background-color: #ffffff;" text="POS Terminal" />
+      <Button fx:id="btnAddItem" layoutX="972.0" layoutY="64.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" />
+      <Button fx:id="btnBarcode" layoutX="527.0" layoutY="64.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" />
+      <Button fx:id="btnAddCustomer" layoutX="458.0" layoutY="64.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" />
+      <Button fx:id="btnCustomer" layoutX="13.0" layoutY="64.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" />
+      <Button fx:id="btnLocation" contentDisplay="CENTER" layoutX="529.0" layoutY="10.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onAction="#increaseCount" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6; -fx-background-image: #C:\Users\office02\Documents\grossHandle\add.png;" wrapText="true">
+         <effect>
+            <Glow />
+         </effect></Button>
+      <Button fx:id="btnInfo" layoutX="972.0" layoutY="10.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" />
+      <ComboBox fx:id="location" layoutX="568.0" layoutY="10.0" minHeight="35.0" minWidth="400.0" style="-fx-border-color: #e8e6e6; -fx-background-color: #ffffff;" />
+      <ComboBox id="cmbSearchCustomer" fx:id="searchCustomer" layoutX="53.0" layoutY="64.0" minHeight="35.0" minWidth="400.0" style="-fx-border-color: #e8e6e6; -fx-background-color: #ffffff;" />
+      <TextField fx:id="itemSearch" layoutX="566.0" layoutY="64.0" minHeight="35.0" minWidth="400.0" />
+      <TableView fx:id="tableView" editable="true" layoutX="13.0" layoutY="116.0" prefHeight="512.0" prefWidth="993.0" tableMenuButtonVisible="true">
+        <columns>
+            <TableColumn fx:id="idCol" minWidth="56.0" prefWidth="-1.0" text="ID" />
+          <TableColumn fx:id="productCol" minWidth="348.0" prefWidth="348.0" text="PRODUCT" />
+          <TableColumn fx:id="quantityCol" minWidth="127.0" prefWidth="127.0" text="QUANTITY" />
+            <TableColumn fx:id="nettoCol" minWidth="124.0" prefWidth="129.0" text="NETTO" />
+            <TableColumn fx:id="bruttoCol" minWidth="126.0" prefWidth="126.0" text="BRUTTO" />
+            <TableColumn fx:id="subtotalCol" minWidth="59.0" prefWidth="155.0" text="SUBTOTAL" />
+            <TableColumn fx:id="colDelete" minWidth="30.0" prefWidth="51.0" />
+        </columns>
+      </TableView>
+      <Separator layoutY="55.0" prefHeight="3.0" prefWidth="1034.0" />
+      <Separator layoutY="106.0" prefHeight="3.0" prefWidth="1034.0" />
+      <Separator layoutX="-1.0" layoutY="632.0" prefHeight="3.0" prefWidth="1034.0" />
+   </children>
+</AnchorPane>

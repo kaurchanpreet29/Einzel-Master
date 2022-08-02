@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?><DataSet>
+  <Version>1.0</Version>
+  <DataSupplier>
+    <Name>Frankfurter Mini Shop</Name>
+    <Location>Frankfurt</Location>
+    <Comment>Datentraegerueberlassung nach GDPDU</Comment>
+  </DataSupplier>
+  <Media>
+    <Name>CD Nummer 1</Name>
+    <Table>
+      <URL>Artikel.csv</URL>
+      <Name>Artikel</Name>
+      <Description>Artikelstammdaten</Description>
+      <Validity>
+        <Range>
+          <From>01.01.2022</From>
+          <To>13.07.2022</To>
+        </Range>
+        <Format>DD.MM.YYYY</Format>
+      </Validity>
+      <DecimalSymbol>.</DecimalSymbol>
+      <DigitGroupingSymbol>,</DigitGroupingSymbol>
+      <Range>
+        <From>2</From>
+      </Range>
+      <VariableLength>
+        <VariablePrimaryKey>
+          <Name>Id</Name>
+          <Description>Artikelnummer</Description>
+          <AlphaNumeric/>
+        </VariablePrimaryKey>
+        <VariableColumn>
+          <Name>Tisch</Name>
+          <Description>Tisch nummer</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Gruppe</Name>
+          <Description>Warengruppe zu Artikel</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Kategorie</Name>
+          <Description>Kategorie zu Artikel</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Zeit erstellt</Name>
+          <Description>Zeit der erstellung</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Steuer</Name>
+			<Description>Steuer Type</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		  <VariableColumn>
+          <Name>Einzelpreis</Name>
+          <Description>Einzel preis der Artikel</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Anz.</Name>
+          <Description>Anzahl der verkauften Artikeln</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Gesamt</Name>
+          <Description>Gesamt Umsatz Brutto </Description>
+          <AlphaNumeric/>
+        </VariableColumn>        
+      </VariableLength>
+    </Table>
+    <Table>
+      <URL>Rechnungen.csv</URL>
+      <Name>Rechnungen</Name>
+      <Description>Bondaten</Description>
+      <Validity>
+        <Range>
+          <From>01.01.2022</From>
+          <To>13.07.2022</To>
+        </Range>
+        <Format>DD.MM.YYYY</Format>
+      </Validity>
+      <DecimalSymbol>.</DecimalSymbol>
+      <DigitGroupingSymbol>,</DigitGroupingSymbol>
+      <Range>
+        <From>2</From>
+      </Range>
+      <VariableLength>
+         <VariablePrimaryKey>
+          <Name>Id</Name>
+          <Description>Bestellung Unique ID</Description>
+          <AlphaNumeric/>
+        </VariablePrimaryKey>
+        <VariableColumn>
+          <Name>Tisch</Name>
+          <Description>Tisch Nummer</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Kellner</Name>
+          <Description>Kellner Name </Description>
+          <AlphaNumeric/>
+        </VariableColumn>        
+        <VariableColumn>
+          <Name>Zeit erstellt</Name>
+          <Description>Zeit der Rechnung Erstellung</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Type</Name>
+          <Description>Bestellung type</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Gesamt</Name>
+          <Description>Gesamt  Bruttobetrag</Description>
+          <AlphaNumeric/>
+        </VariableColumn> 
+		  <VariableColumn>
+          <Name>Status</Name>
+          <Description>Zahlungsstroeme</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Verkaufte Gutscheine</Name>
+          <Description>Verkauft Gutschein check</Description>
+          <AlphaNumeric/>
+        </VariableColumn> 
+		<VariableColumn>
+          <Name>Rabatt</Name>
+          <Description>Rabatt Gesamt</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Hash</Name>
+          <Description>Bon Id</Description>
+          <AlphaNumeric/>
+        </VariableColumn>               
+      </VariableLength>
+    </Table>
+	<Table>
+      <URL>Speisekarte.csv</URL>
+      <Name>Speisekarte</Name>
+      <Description>Speisekartedaten</Description>
+      <Validity>
+        <Range>
+         <From>01.01.2022</From>
+          <To>13.07.2022</To>
+        </Range>
+        <Format>DD.MM.YYYY</Format>
+      </Validity>
+      <DecimalSymbol>.</DecimalSymbol>
+      <DigitGroupingSymbol>,</DigitGroupingSymbol>
+      <Range>
+        <From>2</From>
+      </Range>
+      <VariableLength>
+        <VariablePrimaryKey>
+          <Name>Artikel id</Name>
+          <Description>Artikelnummer</Description>
+          <AlphaNumeric/>
+        </VariablePrimaryKey>
+        <VariableColumn>
+          <Name>Name</Name>
+          <Description>Artikelbezeichnung</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+		 <VariableColumn>
+          <Name>Preis</Name>
+          <Description>Einzelpreis der Artikel </Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Steuer</Name>
+          <Description>Stuer Type</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Kategorie</Name>
+          <Description>Kategorie zu Artikel</Description>
+          <AlphaNumeric/>
+        </VariableColumn>
+        <VariableColumn>		
+          <Name>Gruppe</Name>
+          <Description>Warengruppe zu Artikel</Description>
+          <AlphaNumeric/>
+        </VariableColumn>               
+      </VariableLength>
+    </Table>
+    <Table>
+      <URL>Storno.csv</URL>
+      <Name>Storno</Name>
+      <Description>Einzelne Zahlungsstroene zum Bon</Description>
+      <Validity>
+        <Range>
+         <From>01.01.2022</From>
+          <To>13.07.2022</To>
+        </Range>
+        <Format>DD.MM.YYYY</Format>
+      </Validity>
+      <DecimalSymbol>.</DecimalSymbol>
+      <DigitGroupingSymbol>,</DigitGroupingSymbol>
+      <Range>
+        <From>2</From>
+      </Range>
+      <VariableLength>
+        <VariableColumn>
+          <Name>Id</Name>
+          <Description>Unique bestellung id</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Tisch</Name>
+          <Description>Tisch nummer</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		 <VariableColumn>
+          <Name>Anzahl Der Artikel</Name>
+          <Description>Anzahl Der Artikel </Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Zeit erstellt</Name>
+          <Description>Zeit der bestellung genommen</Description>
+          <Date>
+            <Format>DD.MM.YYYY HH:mm</Format>
+          </Date>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Gesamt</Name>
+          <Description>Gesamt Stornobetrag</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>Grund der Storno</Name>
+          <Description>Storno grund</Description>
+          <AlphaNumeric/>
+        </VariableColumn>        
+      </VariableLength>
+    </Table>	
+    <Table>
+      <URL>Tagesbericht.csv</URL>
+      <Name>Tagesbericht</Name>
+      <Description>Tagesbericht</Description>
+      <Validity>
+        <Range>
+          <From>01.01.2022</From>
+          <To>13.07.2022</To>
+        </Range>
+        <Format>DD.MM.YYYY</Format>
+      </Validity>
+      <DecimalSymbol>.</DecimalSymbol>
+      <DigitGroupingSymbol>,</DigitGroupingSymbol>
+      <Range>
+        <From>2</From>
+      </Range>
+      <VariableLength>
+        <VariablePrimaryKey>
+          <Name>Id</Name>
+          <Description>Unique Z-Bon id</Description>
+          <AlphaNumeric/>
+        </VariablePrimaryKey>        	
+        <VariableColumn>
+          <Name>von</Name>
+          <Description>Tagesbericht VON</Description>
+          <Date>
+            <Format>DD.MM.YYYY HH:mm</Format>
+          </Date>
+        </VariableColumn>
+        <VariableColumn>
+          <Name>bis</Name>
+          <Description>Tagesbericht Bis</Description>
+          <Date>
+            <Format>DD.MM.YYYY HH:mm</Format>
+          </Date>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Datum</Name>
+          <Description>Datum der gedrukt</Description>
+          <Date>
+            <Format>DD.MM.YYYY HH:mm</Format>
+          </Date>
+        </VariableColumn>       
+        <VariableColumn>
+          <Name>Speisen+Getraenke</Name>
+          <Description>Gesamt umsatz der Speisen und Getraenke</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Speisen+Getraenke Mwst.</Name>
+          <Description>Gesamt Mehrwertsteuer</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Umsatz Gesamt</Name>
+          <Description>Gesamt Brutto</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		 <VariableColumn>
+          <Name>Umsatz 19%</Name>
+          <Description>Gesamt Brutto 19%</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Umsatz 7%</Name>
+          <Description>Gesamt Brutto 7%</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Barzahlung</Name>
+          <Description>Gesamt Bar bezahlt </Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Mwst. Barzahlung</Name>
+          <Description>Gesamt Mehrwertsteuer der Barzahlung</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Kartenzahlung</Name>
+          <Description>Gesamt Kartenzahlung</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Mwst. Kartenzahlung</Name>
+          <Description>Gesamt Mehrwertsteuer der Kartenzahlung</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		 <VariableColumn>
+          <Name>Onlinezahlung</Name>
+          <Description>Gesamt Onlinezahlung</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Mwst. Onlinezahlung</Name>
+          <Description>Gesamt Mehrwertsteuer der Onlinezahlung</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>
+		<VariableColumn>
+          <Name>Gutschrift</Name>
+          <Description>Gutschrift</Description>
+          <Numeric>
+            <Accuracy>2</Accuracy>
+          </Numeric>
+        </VariableColumn>       
+      </VariableLength>
+    </Table>
+  </Media>
+</DataSet>

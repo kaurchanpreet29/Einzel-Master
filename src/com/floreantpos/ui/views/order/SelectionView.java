@@ -1,0 +1,276 @@
+package com.floreantpos.ui.views.order;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.util.List;
+
+import javax.swing.AbstractButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.border.TitledBorder;
+
+import net.miginfocom.swing.MigLayout;
+
+import org.jdesktop.swingx.JXCollapsiblePane;
+import org.jdesktop.swingx.JXTitledSeparator;
+
+import com.floreantpos.POSConstants;
+import com.floreantpos.swing.ImageIcon;
+import com.floreantpos.swing.PosButton;
+
+public abstract class SelectionView extends JPanel implements ComponentListener {
+	private Dimension buttonSize;
+
+	protected final JPanel buttonsPanel = new JPanel();
+
+	protected List items;
+	
+	protected int previousBlockIndex = -1;
+	protected int currentBlockIndex = 0;
+	protected int nextBlockIndex;
+
+	protected com.floreantpos.swing.PosButton btnBack;
+	protected com.floreantpos.swing.PosButton btnNext;
+	protected com.floreantpos.swing.PosButton btnPrev;
+	
+	private JPanel southPanel;
+
+	@SuppressWarnings("unused")
+	private String title;
+	
+	public SelectionView(String title, int buttonWidth, int buttonHeight) {
+		this.title = title;
+		this.buttonSize = new Dimension(buttonWidth, buttonHeight);
+
+		TitledBorder border = new TitledBorder(title);
+		border.setTitleJustification(TitledBorder.CENTER);
+		border.setTitleColor(Color.WHITE);
+		border.setTitleFont(new Font("Serif", Font.BOLD,16));
+		setBorder(border);
+	
+		setLayout(new BorderLayout(0,0));
+		this.setBackground(Color.WHITE);
+		buttonsPanel.addComponentListener(this);
+		buttonsPanel.setBackground(new Color(35,35,36));
+		add(buttonsPanel);
+
+		MigLayout migLayout2 = new MigLayout("fill,hidemode 3", "grow", "");
+		southPanel = new JPanel(migLayout2);
+		southPanel.add(new JSeparator(JSeparator.HORIZONTAL), "wrap, span, grow, gaptop 5");
+
+		btnBack = new PosButton();
+		btnBack.setText(POSConstants.CAPITAL_BACK);
+		//btnBack.setForeground(Color.WHITE);
+		btnBack.setForeground(Color.WHITE);
+		btnBack.setBackground(new Color(2,36,80));
+		
+		southPanel.add(btnBack, "grow,shrink, align center, height 50");
+		southPanel.setBackground(new Color(35,35,36));
+		btnPrev = new PosButton();
+		btnPrev.setForeground(Color.WHITE);
+		btnPrev.setIcon(new ImageIcon(getClass().getResource("/images/previous_32.png")));
+		btnPrev.setBackground(new Color(111, 84, 84));
+		
+		southPanel.add(btnPrev, "grow, align center, height 50");
+
+		btnNext = new PosButton();
+		btnNext.setBackground(new Color(111,84,84));
+		btnNext.setForeground(Color.WHITE);
+		btnNext.setIcon(new ImageIcon(getClass().getResource("/images/next_32.png")));
+		southPanel.add(btnNext, "grow, align center, height 50");
+
+		add(southPanel, BorderLayout.SOUTH);
+
+		ScrollAction action = new ScrollAction();
+		btnBack.addActionListener(action);
+		btnPrev.addActionListener(action);
+		btnNext.addActionListener(action);
+	
+		repaint(); 
+	}
+
+	public SelectionView(String title) {
+		this(title, 120, 120);
+	}
+
+	public void setItems(List items) {
+		this.items = items;
+		currentBlockIndex = 0;
+		nextBlockIndex = 0;
+		
+		renderItems();
+	}
+
+	public List getItems() {
+		return items;
+	}
+
+	public Dimension getButtonSize() {
+		return buttonSize;
+	}
+
+	public void setButtonSize(Dimension buttonSize) {
+		this.buttonSize = buttonSize;
+	}
+
+	protected abstract AbstractButton createItemButton(Object item);
+
+	public void reset() {
+		//btnBack.setEnabled(false);
+		btnNext.setEnabled(false);
+		btnPrev.setEnabled(false);
+		
+		Component[] components = buttonsPanel.getComponents();
+		for (int i = 0; i < components.length; i++) {
+			Component c = components[i];
+			if (c instanceof AbstractButton) {
+				AbstractButton button = (AbstractButton) c;
+				button.setPreferredSize(null);
+
+				ActionListener[] actionListeners = button.getActionListeners();
+				if (actionListeners != null) {
+					for (int j = 0; j < actionListeners.length; j++) {
+						button.removeActionListener(actionListeners[j]);
+					}
+				}
+			}
+		}
+		buttonsPanel.removeAll();
+		buttonsPanel.revalidate();
+		buttonsPanel.repaint();
+		revalidate();
+		repaint();
+	}
+	
+	protected void renderItems() {
+		reset();
+		 
+		if (this.items == null || items.size() == 0) {
+			return;
+		}
+		
+		Dimension size = buttonsPanel.getSize();
+		Dimension itemButtonSize = getButtonSize();
+
+		int horizontalButtonCount = getButtonCount(size.width+10, getButtonSize().width);
+		int verticalButtonCount = getButtonCount(size.height, getButtonSize().height);
+		
+		buttonsPanel.setLayout(new MigLayout("insets 0, gapx 1,gapy 1, alignx 50%, wrap" + horizontalButtonCount));
+		
+		int totalItem = horizontalButtonCount * verticalButtonCount;
+		if (totalItem >= items.size()) {
+      southPanel.setVisible(false);
+    } else {
+      southPanel.setVisible(true);
+    }
+		
+		previousBlockIndex = currentBlockIndex - totalItem;
+		nextBlockIndex = currentBlockIndex + totalItem;
+		
+		try {
+			for (int i = currentBlockIndex; i < nextBlockIndex; i++) {
+
+				Object item = items.get(i);
+
+				AbstractButton itemButton = createItemButton(item);
+				buttonsPanel.add(itemButton, "width " + itemButtonSize.width + "!, height " + itemButtonSize.height + "!");
+
+				if (i == items.size() - 1) {
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: fix it.
+		}
+		
+		if(previousBlockIndex >= 0 && currentBlockIndex != 0) {
+			btnPrev.setEnabled(true);
+		}
+		
+		if(nextBlockIndex < items.size()) {
+			btnNext.setEnabled(true);
+		}
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void addButton(AbstractButton button) {
+		button.setPreferredSize(buttonSize);
+		button.setText("<html><body><center>" + button.getText() + "</center></body></html>");
+		buttonsPanel.add(button);
+	}
+
+	public void addSeparator(String text) {
+		buttonsPanel.add(new JXTitledSeparator(text, JLabel.CENTER), "alignx 50%, newline, span, growx, height 30!");
+	}
+
+	private void scrollDown() {
+		currentBlockIndex = nextBlockIndex;
+		renderItems();
+	}
+
+	private void scrollUp() {
+		currentBlockIndex = previousBlockIndex;
+		renderItems();
+	}
+
+	public void setBackEnable(boolean enable) {
+		btnBack.setEnabled(enable);
+	}
+
+	public void setBackVisible(boolean enable) {
+		btnBack.setVisible(enable);
+	}
+
+	public abstract void doGoBack();
+
+	private class ScrollAction implements ActionListener {
+
+		public void actionPerformed(ActionEvent e) {
+			Object source = e.getSource();
+			if (source == btnBack) {
+				doGoBack();
+			}
+			else if (source == btnPrev) {
+				scrollUp();
+			}
+			else if (source == btnNext) {
+				scrollDown();
+			}
+		}
+
+	}
+
+	public JPanel getButtonsPanel() {
+		return buttonsPanel;
+	}
+
+	protected int getButtonCount(int containerSize, int itemSize) {
+		
+    int buttonCount = containerSize / itemSize;
+    return buttonCount;
+	}
+
+	public void componentResized(ComponentEvent e) {
+		renderItems();
+	}
+
+	public void componentMoved(ComponentEvent e) {
+	}
+
+	public void componentShown(ComponentEvent e) {
+	}
+
+	public void componentHidden(ComponentEvent e) {
+	}
+}

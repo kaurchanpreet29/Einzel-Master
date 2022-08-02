@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.floreantpos.model">
+  <class lazy="false" name="Restaurant" table="RESTAURANT">
+    <id column="ID" name="id" type="java.lang.Integer">
+      <generator class="assigned"/>
+    </id>
+    <property column="UNIQUE_ID" name="uniqueId" type="java.lang.Integer"/>
+    <property column="NAME" length="80" name="name" type="string"/>
+    <property column="ADDRESS_LINE1" length="80" name="addressLine1" type="string"/>
+    <property column="ADDRESS_LINE2" length="80" name="addressLine2" type="string"/>
+    <property column="ADDRESS_LINE3" length="80" name="addressLine3" type="string"/>
+    <property column="EMAIL" length="80" name="email" type="string"/>
+    <property column="ZIP_CODE" length="10" name="zipCode" type="string"/>
+    <property column="TELEPHONE" length="25" name="telephone" type="string"/>
+    <property column="CAPACITY" name="capacity" type="java.lang.Integer"/>
+    <property column="TABLES" name="tables" type="java.lang.Integer"/>
+    <property column="HAPPYHOURFROM" name="happyhourfrom" type="java.lang.String"/>
+    <property column="HAPPYHOURTO" name="happyhourto" type="java.lang.String"/>
+    <property column="AUTODRAWERPULLENABLE" name="autoDrawerPullEnable" type="java.lang.Boolean"/>
+    <property column="DRAWER_PULL_HOUR" name="drawerPullHour" type="java.lang.Integer"/>
+    <property column="DRAWER_PULL_MIN" name="drawerPullMin" type="java.lang.Integer"/>
+    <property column="CNAME" length="20" name="currencyName" type="string"/>
+    <property column="CSYMBOL" length="10" name="currencySymbol" type="string"/>
+    <property column="SC_PERCENTAGE" length="10" name="serviceChargePercentage" type="java.lang.Double"/>
+    <property column="GRATUITY_PERCENTAGE" length="10" name="defaultGratuityPercentage" type="java.lang.Double"/>
+    <property column="TICKET_FOOTER" length="60" name="ticketFooterMessage" type="java.lang.String"/>
+    <property column="PRICE_INCLUDES_TAX" name="itemPriceIncludesTax" type="java.lang.Boolean"/>
+    <property column="TICKET_FOOTER1" length="500" name="ticketFooterMessage1" type="java.lang.String"/>
+    <property column="TICKET_FOOTER2" length="500" name="ticketFooterMessage2" type="java.lang.String"/>
+    <property column="SECONDARY_NAME" length="60" name="secondaryName" type="java.lang.String"/>
+    <property column="SECONDARY_TELEPHONE" length="60" name="secondaryTelephone" type="java.lang.String"/>
+    <property column="LICENSE_KEY" length="20" name="licenseKey" type="java.lang.String"/>
+    <property column="LICENSE_MAC" length="20" name="licenseMac" type="java.lang.String"/>
+    <property column="LICENSE_EXPIRY_DATE" length="20" name="licenseExpiryDate" type="java.util.Date"/>
+    <property column="FAX" length="30" name="fax" type="java.lang.String"/>
+    <property column="KITCHEN_SERIAL_NO" name="kitchenSerialNo" type="java.lang.Integer"/>
+    <property column="BAR_SERIAL_NO" name="barSerialNo" type="java.lang.Integer"/>
+    <property column="PAYNOW" length="30" name="paynow" type="java.lang.String"/>
+    <property column="PAYLATER" length="30" name="paylater" type="java.lang.String"/>
+    <property column="SETTLE" length="30" name="settle" type="java.lang.String"/>
+    <property column="DIVERSE" length="30" name="diverse" type="java.lang.String"/>
+    <property column="REOPEN" length="30" name="reopen" type="java.lang.String"/>
+    <property column="DELETETICKET" length="30" name="deleteticket" type="java.lang.String"/>
+    <property column="ADDITEM" length="30" name="additem" type="java.lang.String"/>
+    <property column="TICKETPREVIEW" length="30" name="ticketpreview" type="java.lang.String"/>
+    <property column="DELETEITEM" length="30" name="deleteitem" type="java.lang.String"/>
+    <property column="OLDTICKET" length="30" name="oldticket" type="java.lang.String"/>
+    <property column="CLOSETICKET" length="30" name="closeticket" type="java.lang.String"/>
+    <property column="SPLITTICKET" length="30" name="splitticket" type="java.lang.String"/>
+    <property column="DUPDINEIN" name="dupdinein" type="java.lang.Boolean"/>
+    <property column="UNIQUE_ARTIKEL_NUMMER" name="artikelnummer" type="java.lang.Integer"/>
+    <property column="ITEMSONSTIGESTEXT" length="30" name="itemsonstigestext" type="java.lang.String"/>
+    <property column="SALES_ID" name="salesid" type="java.lang.Integer"/>
+    <property column="TODAY_START_TIME" length="20" name="startToday" type="java.util.Date"/>
+    <property column="FAST_PAYMENT" name="fastPayment" type="java.lang.Boolean"/>
+    <property column="DUPLICATE_BILL" name="copyRechnug" type="java.lang.Boolean"/> 
+    <property column="WITH_WARENGROUP_ABS" name="withWarengroup" type="java.lang.Boolean"/> 
+    <property column="SHOW_RETURN_DIALOG" name="showReturnDialog" type="java.lang.Boolean"/> 
+    <property column="AUTO_SALES" name="autoSalesReport" type="java.lang.Boolean"/>  
+    <property column="AUTO_SALES_HOUR" length="30" name="autoSalesHour" type="java.lang.String"/>
+    <property column="TICKET_ID" length="500" name="ticketid" type="java.lang.Integer"/>
+    <property column="GREETING_TEXT" length="1000" name="greetingText" type="java.lang.String"/>
+    <property column="FOOTER_TEXT" length="1000" name="footerText" type="java.lang.String"/>
+    <property column="ITEM_TEXT_COLR" name="itemTexColor" type="java.awt.Color"/> 
+    <property column="ITEM_BUTTON_COLR" name="backButtoColor" type="java.awt.Color"/> 
+    <property column="TSE_VENDOR" name="tseVendor" type="java.lang.String"/>
+    <property column="TSE_ID" name="tseId" type="java.lang.String"/>
+    <property column="TSE_MODE" length="30" name="tseLive" type="java.lang.Boolean"/> 
+    <property column="SALES_KELLNER" name="kellenerSalesReport" type="java.lang.Boolean"/>
+    <property column="UPDATE_LINK" name="updateLink" type="java.lang.String"/>  
+    <property column="REMOTE_ID" name="remoteId" type="java.lang.String"/>  
+    <property column="USB_ID" name="certUsbId" type="java.lang.String"/>          
+    <property column="TSE_START_DATE" length="20" name="tseActivateDate" type="java.util.Date"/>
+    <property column="TSE_EXPIRY_DATE" length="20" name="tseValidDate" type="java.util.Date"/>  
+  </class>
+</hibernate-mapping>

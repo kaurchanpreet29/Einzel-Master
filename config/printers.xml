@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<printers>
+    <a4Printer>OneNote for Windows 10</a4Printer>
+    <a4PrinterEnable>false</a4PrinterEnable>
+    <barPrinterEnable>false</barPrinterEnable>
+    <kitchenPrinterEnable>false</kitchenPrinterEnable>
+    <receiptPrinter>OneNote for Windows 10</receiptPrinter>
+    <receiptPrinterEnable>true</receiptPrinterEnable>
+    <reportPrinter>OneNote for Windows 10</reportPrinter>
+    <sonstigePrinter>OneNote for Windows 10</sonstigePrinter>
+</printers>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="KitchenReceipt" pageWidth="230" pageHeight="320" whenNoDataType="BlankPage" columnWidth="230" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="barcode" class="java.io.InputStream"/>
+	<parameter name="restaurantName" class="java.lang.String"/>
+	<parameter name="price" class="java.lang.String"/>
+	<parameter name="validity" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="29" y="24" width="181" height="47"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="29" y="12" width="181" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{restaurantName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="71" width="181" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="0" width="104" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{validity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+  <class lazy="false" name="com.floreantpos.model.MenuGroup" optimistic-lock="version" table="MENU_GROUP">
+    <id column="ID" name="id" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <version column="MODIFIED_TIME" name="modifiedTime" type="timestamp"/>
+    <property column="NAME" length="60" name="name" not-null="true" type="java.lang.String"/>
+    <property name="image" column="IMAGE" not-null="false" type="binary" length="20480" />
+    <property column="LINK" length="60" name="link" type="java.lang.String" />
+    <property column="GROUPID" length="10" name="groupid" type="java.lang.Integer">
+    	<meta attribute="defaultValue">0</meta>
+    </property>
+    <property column="SECNAME" length="60" name="secname" type="java.lang.String" />
+    <property column="DESCRIPTION" length="500" name="description" type="java.lang.String" />
+    <property column="NOTE" length="200" name="note" type="java.lang.String" />
+    <property column="PRICE" length="52" name="price" type="java.lang.Double" />
+    <property column="DISCOUNT" length="52" name="discount" type="java.lang.Double" />
+    <property column="GAENG" length="20" name="gaeng" type="java.lang.Integer">
+    	<meta attribute="defaultValue">1</meta>
+    </property>
+    <!-- property name="image" type="java.sql.Blob" column="IMAGE" length="1048576" /-->
+    <property column="VISIBLE" index="menugroupvisible" name="visible" type="java.lang.Boolean"/>
+    <!-- Associations -->
+    <!-- uni-directional many-to-one association to FoodCategory -->
+    <many-to-one class="com.floreantpos.model.MenuCategory" lazy="false" name="parent">
+      <column name="CATEGORY_ID"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

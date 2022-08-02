@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gutsheinTemplate" pageWidth="226" pageHeight="842" columnWidth="224" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1">
+	<property name="ireport.zoom" value="1.9487171000000025"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="barcode" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="barcodeNr" class="java.lang.String"/>
+	<parameter name="restaurantName" class="java.lang.String"/>
+	<parameter name="restaurant_city" class="java.lang.String"/>
+	<parameter name="rstaurant_Address" class="java.lang.String"/>
+	<parameter name="wishNote" class="java.lang.String"/>
+	<parameter name="gutscheinValue" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{wishNote}!=null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="1" width="206" height="24" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{wishNote}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{wishNote}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="240" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="5" width="160" height="13">
+					<printWhenExpression><![CDATA[$P{restaurantName}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{restaurantName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="17" width="160" height="13">
+					<printWhenExpression><![CDATA[$P{restaurant_city}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{restaurant_city}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="29" width="160" height="13" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{rstaurant_Address}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{rstaurant_Address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-8" x="15" y="45" width="106" height="18" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{gutscheinValue}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="14" isBold="true" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[GUTSCHEIN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="45" width="87" height="18" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{gutscheinValue}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" onErrorType="Blank">
+				<reportElement x="161" y="2" width="50" height="43" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{logo}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<image scaleImage="RetainShape" hAlign="Center" onErrorType="Blank">
+				<reportElement mode="Opaque" x="0" y="65" width="224" height="91" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$P{barcode}!=null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{barcode}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="153" width="224" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{barcodeNr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

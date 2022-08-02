@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+  <class lazy="false" name="com.floreantpos.model.Gutschein" optimistic-lock="version" table="GUTCHEIN">
+    <id column="ID" name="id" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <property column="BARCODE" length="120" name="barcode" type="java.lang.String" />
+    <property column="EXPIRY_DATE" length="10" name="expiryDate" type="java.util.Date" />
+    <property column="CREATED_DATE" length="10" name="createdDate" type="java.util.Date" />
+    <property column="CREATED_BY" length="120" name="createdBy" type="java.lang.String" />
+    <property column="VALUE" name="value" type="java.lang.Double" />
+    <property column="UNLIMITED" name="unlimited" type="java.lang.Boolean" />
+    <property column="CLOSED" name="closed" type="java.lang.Boolean" />
+    <property column="SPLITTED" name="splitted" type="java.lang.Boolean" />
+    <property column="SPLITTEDAMOUNT" name="splittedAmount" type="java.lang.Double" />
+    <property column="BILL_NR" length="120" name="rechnungNr" type="java.lang.String" />    
+    <property column="NAME" length="120" name="name" type="java.lang.String" />
+    <property column="COUNT" name="count" type="java.lang.Integer" />
+    
+  </class>
+</hibernate-mapping>

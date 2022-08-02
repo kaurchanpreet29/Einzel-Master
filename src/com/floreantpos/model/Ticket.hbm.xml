@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+	<class lazy="false" name="com.floreantpos.model.Ticket" optimistic-lock="version" table="TICKET">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		<version column="MODIFIED_TIME" name="modifiedTime" type="timestamp" />
+		<property column="CREATE_DATE" index="ticketcreateDate" length="10" name="createDate" type="java.util.Date" />
+		<property column="CLOSING_DATE" index="ticketclosingDate" length="10" name="closingDate" type="java.util.Date" />
+		<property column="ACTIVE_DATE" index="ticketactiveDate" length="10" name="activeDate" type="java.util.Date" />
+		<property column="DELIVEERY_DATE" index="deliveryDate" length="10" name="deliveryDate" type="java.util.Date" />
+		<property column="CREATION_HOUR" index="creationHour" name="creationHour" type="java.lang.Integer" />
+		<property column="PAID" index="ticketpaid" name="paid" type="java.lang.Boolean" />
+		<property column="VOIDED" index="ticketvoided" name="voided" type="java.lang.Boolean" />
+		<property column="VOID_REASON" name="voidReason" type="java.lang.String" />
+		<property column="WASTED" name="wasted" type="java.lang.Boolean" />
+		<property column="REFUNDED" name="refunded" type="java.lang.Boolean" />
+		<!-- a ticket is marked as closed it is either paid or voided -->
+		<property column="SOLD_GUTSCHEIN" name="soldGutschein" type="java.lang.Boolean" />
+		<property column="SETTLED" index="ticketsettled" name="closed" type="java.lang.Boolean" />
+		<property column="DRAWER_RESETTED" index="drawerresetted" name="drawerResetted" type="java.lang.Boolean" />
+		<property column="GDPDUID" index="ticketid" name="gdpduid" type="java.lang.Integer" /><!-- NOT USED -->
+		<property column="SUB_TOTAL" length="52" name="subtotalAmount" type="java.lang.Double" />
+		<property column="TIPAMOUNT" length="52" name="tipAmount" type="java.lang.Double" />
+		<property column="TOTAL_DISCOUNT" length="52" name="discountAmount" type="java.lang.Double" />
+		<property column="TOTAL_TAX" length="52" name="taxAmount" type="java.lang.Double" />
+		<property column="TOTAL_PRICE" length="52" name="totalAmount" type="java.lang.Double" />
+        <property column="PFAND" length="52" name="pfand" type="java.lang.Double" />
+        <property column="PFAND2" length="52" name="pfand2" type="java.lang.Double" />
+        <property column="PFAND3" length="52" name="pfand3" type="java.lang.Double" />
+		<property column="PAID_AMOUNT" length="52" name="paidAmount" type="java.lang.Double" />
+		<property column="DUE_AMOUNT" length="52" name="dueAmount" type="java.lang.Double" />
+		<property column="ADVANCE_AMOUNT" length="52" name="advanceAmount" type="java.lang.Double" />
+		<!--tableNumber should be -1 for take out -->
+		<property column="NUMBER_OF_GUESTS" name="numberOfGuests" type="java.lang.Integer" />
+		<property column="STATUS" name="status" type="string" length="30" />
+		<!-- property name="gratuityAmount" type="java.lang.Double" column="GRATUITY_AMOUNT" /> <property name="gratuityPaid" type="java.lang.Boolean" column="GRATUITY_PAID" 
+			/ -->
+		<property column="IS_TAX_EXEMPT" name="taxExempt" type="java.lang.Boolean" />
+		<property column="GUTSCHEIN_PAYMENT" name="gutscheinPayment" type="java.lang.Boolean" not-null="false" />
+		<property column="CASH_PAYMENT" name="cashPayment" type="java.lang.Boolean" not-null="false" />
+		<property column="ONLINE_PAYMENT" name="onlinePayment" type="java.lang.Boolean" not-null="false" />
+		<property column="IS_RE_OPENED" name="reOpened" type="java.lang.Boolean" />
+		<property column="SERVICE_CHARGE" name="serviceCharge" type="java.lang.Double" />
+		<property column="DELIVERY_CHARGE" name="deliveryCharge" type="java.lang.Double" />
+		<property column="DELIVERY_ADDRESS" name="deliveryAddress" length="120" type="string" />
+		<property column="CUSTOMER_PICKEUP" name="customerWillPickup" type="java.lang.Boolean" />
+		<property column="DELIVERY_EXTRA_INFO" name="extraDeliveryInfo" type="string" />
+		<property name="ticketType" column="TICKET_TYPE" length="20" type="string" />
+		<property column="DELIVERY_COST" length="20" name="deliveryCost" type="java.lang.Double" />
+		<property column="MIN_ORDER" length="20" name="minOrder" type="java.lang.Double" />
+		<property column="DELIVERY_TIME" length="20" name="deliveryTime" type="java.lang.String" />
+		<property column="READYBONPRINT" name="readybonprint" type="java.lang.Boolean" />
+		<property column="TABPRINT" name="tabprint" type="java.lang.Boolean" />
+		<property column="SPLIT" name="split" type="java.lang.Boolean" />
+		<property column="CARDPAYMENTTYPE" name="cardpaymenttype" type="java.lang.Integer" />
+		<property column="PAYMENT_SPLIT" name="splitPayment" type="java.lang.Boolean" />
+		<property column="CARD_AMOUNT" length="52" name="cardAmount" type="java.lang.Double" />
+		<property column="RETOUR" name="retour" type="java.lang.Boolean" />	
+		<property column="SALES_ID" name="salesid" type="java.lang.Integer" />
+		<property column="TICKETID" index="ticketid" name="ticketid" type="java.lang.Integer" />
+		<property column="GUTSHEIN_HAUSBON" name="gutscheinHausbon" type="java.lang.Boolean" />
+		<property column="KUNDEN_LOYALTY_NO" length="100" name="loyaltyNo" type="java.lang.String" />
+		<property column="IM_HAUS_AMNT" length="20" name="imHausAmnt" type="java.lang.Double" />
+		<property column="AUS_HAUS_AMNT" length="20" name="ausHausAmnt" type="java.lang.Double" />
+		<property column="IM_HAUS_TAX" length="20" name="imHausTax" type="java.lang.Double" />
+		<property column="AUS_HAUS_TAX" length="20" name="ausHausTax" type="java.lang.Double" />
+		<property column="BEV_AMNT" length="20" name="bevAmnt" type="java.lang.Double" />
+		<property column="ZERO_AMNT" length="20" name="zeroAmnt" type="java.lang.Double" />	
+		<property column="BILL_PAYMEN" name="rechnugPayemnt" type="java.lang.Boolean" />	
+		<property column="BILL_PAYMEN_PAID" name="rechnugpaid" type="java.lang.Boolean" />
+		<property column="TSE_CLIENT_ID" length="200" name="tseClientId" type="java.lang.String" />
+		<property column="TSE_RECEIPT_TX_ID" length="200" name="tseReceiptTxId" type="java.lang.String" />
+		<property column="TSE_TX_REVSN_NR" length="50" name="tseTxRevisionNr" type="java.lang.String" />
+		<property column="TSE_RECEIPT_TX_REVSN_NR" length="50" name="tseReceiptTxRevisionNr" type="java.lang.String" />
+		<property column="TSE_RECEIPT_DATA_ID" name="tseReceiptDataId" type="java.lang.Integer" />				
+		
+		<map name="properties" cascade="all" lazy="false">
+			<key column="id" />
+			<index column="property_name" type="string" />
+			<element column="property_value" type="string" length="1000"/>
+		</map>
+
+		<!-- Associations -->
+		<!-- bi-directional one-to-many association to TicketItem -->
+		<list cascade="all" inverse="false" lazy="true" name="ticketItems">
+			<key>
+				<column name="TICKET_ID" />
+			</key>
+			<list-index column="ITEM_ORDER" />
+			<one-to-many class="com.floreantpos.model.TicketItem" />
+		</list>
+		<list cascade="all" inverse="false" lazy="true" name="couponAndDiscounts">
+			<key>
+				<column name="TICKET_ID" />
+			</key>
+			<list-index column="D_ORDER" />
+			<one-to-many class="com.floreantpos.model.TicketCouponAndDiscount" />
+		</list>
+
+		<set cascade="all" inverse="true" lazy="false" name="transactions">
+			<key>
+				<column name="TICKET_ID" />
+			</key>
+			<one-to-many class="com.floreantpos.model.PosTransaction" />
+		</set>
+
+		<set name="tables" cascade="save-update" table="TICKET_TABLE" lazy="false">
+			<key column="ticket_id" />
+			<many-to-many column="table_id" class="com.floreantpos.model.ShopTable" />
+		</set>
+
+		<!-- uni-directional many-to-one association to User -->
+		<many-to-one class="com.floreantpos.model.Shift" lazy="false" name="shift">
+			<column name="SHIFT_ID" />
+		</many-to-one>
+		<many-to-one class="com.floreantpos.model.User" lazy="false" name="owner">
+			<column name="OWNER_ID" />
+		</many-to-one>		
+		<many-to-one class="com.floreantpos.model.User" lazy="false" name="assignedDriver">
+			<column name="DRIVER_ID" />
+		</many-to-one>
+		<many-to-one cascade="all" class="com.floreantpos.model.Gratuity" lazy="false" name="gratuity">
+			<column name="GRATUITY_ID" />
+		</many-to-one>
+		<many-to-one class="com.floreantpos.model.User" lazy="false" name="voidedBy">
+			<column name="VOID_BY_USER" />
+		</many-to-one>
+		<many-to-one class="com.floreantpos.model.Terminal" cascade="none" lazy="false" name="terminal">
+			<column name="TERMINAL_ID" />
+		</many-to-one>		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketReceiptReport" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="481" leftMargin="57" rightMargin="57" topMargin="108" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.650000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="293"/>
+	<property name="ireport.background.image.properties" value="false,true,0.25,0,0,0,0,0,0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="headerLine1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine4" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine5" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="grandSubtotal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="grandTotal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="taxAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tipAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="netAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="currencySymbol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="changedAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="paidAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="serviceCharge" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="discountAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="footerMessage" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="receiptType" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="showHeaderSeparator" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="terminal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="totalText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="discountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="taxText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="serviceChargeText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tipsText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="netAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="paidAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="changeAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="showFooter" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="showSubtotal" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="itemText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="quantityText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="subTotalText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ticketHeader" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="deliveryChargeText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="deliveryCharge" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dueAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dueAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="additionalProperties" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="approvalCode" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="cardPayment" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="copyType" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="barcode" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="itemIdText" class="java.lang.String"/>
+	<parameter name="footerMessage1" class="java.lang.String"/>
+	<parameter name="footerMessage2" class="java.lang.String"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="Address" class="java.lang.String"/>
+	<parameter name="Zip" class="java.lang.String"/>
+	<parameter name="Date" class="java.lang.String"/>
+	<parameter name="ReceiptNr" class="java.lang.String"/>
+	<parameter name="DateValue" class="java.lang.String"/>
+	<parameter name="ReceiptValue" class="java.lang.String"/>
+	<parameter name="RestaurantName" class="java.lang.String"/>
+	<parameter name="Start" class="java.lang.String"/>
+	<parameter name="itemPriceText" class="java.lang.String"/>
+	<parameter name="itemQtyText" class="java.lang.String"/>
+	<parameter name="taxTextO" class="java.lang.String"/>
+	<parameter name="taxAmountO" class="java.lang.String"/>
+	<parameter name="deliveryText" class="java.lang.String"/>
+	<parameter name="deliveryDate" class="java.lang.String"/>
+	<parameter name="footerLogo" class="java.io.InputStream"/>
+	<parameter name="headerLogo" class="java.io.InputStream"/>
+	<parameter name="greetingText" class="java.lang.String"/>
+	<parameter name="headerLogoStart" class="java.io.InputStream"/>
+	<parameter name="footerLogoEnd" class="java.io.InputStream"/>
+	<parameter name="pageFooter" class="java.io.InputStream"/>
+	<parameter name="mst7" class="java.lang.String"/>
+	<parameter name="mst19" class="java.lang.String"/>
+	<parameter name="taxAmount0" class="java.lang.String"/>
+	<parameter name="taxAmount7" class="java.lang.String"/>
+	<parameter name="mst0" class="java.lang.String"/>
+	<parameter name="itemTaxText" class="java.lang.String"/>
+	<parameter name="itemTax" class="java.lang.String"/>
+	<parameter name="greetingText_1" class="java.lang.String"/>
+	<parameter name="footerText" class="java.lang.String"/>
+	<parameter name="kundenNr" class="java.lang.String"/>
+	<parameter name="kundenText" class="java.lang.String"/>
+	<parameter name="steuerText" class="java.lang.String"/>
+	<parameter name="steuerNr" class="java.lang.String"/>
+	<parameter name="DDateText" class="java.lang.String"/>
+	<parameter name="summeImhaus" class="java.lang.String"/>
+	<parameter name="summeAusserhaus" class="java.lang.String"/>
+	<field name="itemQty" class="java.lang.String"/>
+	<field name="itemName" class="java.lang.String"/>
+	<field name="itemSubtotal" class="java.lang.String"/>
+	<field name="ItemId" class="java.lang.String"/>
+	<field name="itemPrice" class="java.lang.String"/>
+	<field name="itemTax" class="java.lang.String"/>
+	<background>
+		<band height="734" splitType="Stretch">
+			<image scaleImage="RealSize" hAlign="Center">
+				<reportElement x="-55" y="-105" width="590" height="839"/>
+				<imageExpression class="java.lang.String"><![CDATA["resources\\images\\briefpapier.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="-30" y="-227" width="595" height="25"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="-30" y="-202" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="-30" y="-182" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="-30" y="-162" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-7" x="-30" y="-227" width="595" height="25"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" x="-30" y="-202" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" x="-30" y="-182" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-10" x="-30" y="-162" width="595" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" positionType="Float" x="2" y="16" width="192" height="21" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" positionType="Float" x="1" y="38" width="192" height="21" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" positionType="Float" x="1" y="52" width="192" height="21" isRemoveLineWhenBlank="true"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Zip}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="302" y="63" width="88" height="13"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DateValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="302" y="15" width="88" height="13"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ReceiptValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="391" y="51" width="79" height="13">
+					<printWhenExpression><![CDATA[$P{deliveryDate}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{deliveryDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="63" width="79" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="15" width="79" height="13"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ReceiptNr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="39" width="79" height="13">
+					<printWhenExpression><![CDATA[$P{kundenNr}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{kundenNr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="39" width="88" height="13">
+					<printWhenExpression><![CDATA[$P{kundenNr}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{kundenText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="27" width="88" height="13">
+					<printWhenExpression><![CDATA[$P{steuerNr}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{steuerText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="27" width="79" height="13">
+					<printWhenExpression><![CDATA[$P{steuerNr}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{steuerNr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="51" width="88" height="13">
+					<printWhenExpression><![CDATA[$P{deliveryDate}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DDateText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="3" width="79" height="13"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-7" mode="Transparent" x="302" y="3" width="88" height="13" isRemoveLineWhenBlank="true" backcolor="#808080"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Seite:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15">
+			<printWhenExpression><![CDATA[!Boolean.valueOf(String.valueOf($V{PAGE_NUMBER}).equals("1"))]]></printWhenExpression>
+			<textField>
+				<reportElement x="419" y="1" width="50" height="13"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-7" mode="Transparent" x="374" y="1" width="43" height="13" isRemoveLineWhenBlank="true" backcolor="#808080"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Arial" size="10" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Seite:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement key="staticText-4" positionType="Float" x="387" y="1" width="64" height="18">
+					<printWhenExpression><![CDATA[$P{showSubtotal}==true]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="11" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{subTotalText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-2" positionType="Float" x="291" y="1" width="60" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemPriceText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-2" positionType="Float" x="29" y="1" width="69" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemQtyText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-2" positionType="Float" x="98" y="1" width="193" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-2" positionType="Float" x="1" y="1" width="28" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemIdText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="1" width="36" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{itemTaxText}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="0" y="0" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="1" y="0" width="450" height="1" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="28" y="0" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="1" y="20" width="451" height="1" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="98" y="0" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="350" y="1" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="291" y="0" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="387" y="1" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="451" y="0" width="1" height="20" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="0" width="64" height="21" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{showSubtotal}==true]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{itemSubtotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="98" y="0" width="193" height="21" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{itemName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="291" y="0" width="60" height="21" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{itemPrice}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="29" y="0" width="69" height="21" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{itemQty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="1" y="0" width="28" height="21" isRemoveLineWhenBlank="true"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ItemId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="0" width="36" height="21"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{itemTax}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="0" y="-1" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="28" y="-1" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="98" y="-1" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="350" y="0" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="291" y="-1" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="387" y="0" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="451" y="-1" width="1" height="22" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="140">
+			<line>
+				<reportElement key="line-1" positionType="Float" x="0" y="-4" width="451" height="1" forecolor="#666666"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="140"/>
+	</lastPageFooter>
+	<summary>
+		<band height="130" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-6" x="1" y="53" width="386" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{discountAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{discountText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="53" width="64" height="13" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{discountAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-5" x="1" y="66" width="386" height="17" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{totalText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="66" width="64" height="17" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{grandSubtotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="28" width="64" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{taxAmount7}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{taxAmount7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="16" width="64" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{taxAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{taxAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="1" y="28" width="386" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{taxAmount7}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{mst7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="1" width="64" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{netAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{netAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="1" y="16" width="386" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{taxAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{mst19}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-7" mode="Transparent" x="1" y="40" width="386" height="13" isRemoveLineWhenBlank="true" backcolor="#808080">
+					<printWhenExpression><![CDATA[$P{grandTotal}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="11" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Gesamt]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="387" y="40" width="64" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{grandTotal}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{grandTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="91" width="449" height="33"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{footerText}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-7" mode="Transparent" x="1" y="1" width="386" height="15" isRemoveLineWhenBlank="true" backcolor="#808080">
+					<printWhenExpression><![CDATA[$P{netAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="11" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Gesamt Netto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="297" y="16" width="90" height="13">
+					<printWhenExpression><![CDATA[$P{summeImhaus}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{summeImhaus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="28" width="90" height="13">
+					<printWhenExpression><![CDATA[$P{summeAusserhaus}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{summeAusserhaus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

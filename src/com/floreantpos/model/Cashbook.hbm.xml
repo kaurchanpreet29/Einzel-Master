@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+	<class lazy="false" name="com.floreantpos.model.Cashbook" table="CASHBOOK">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		<property name="date" column="DATE" length="10" type="java.util.Date" />
+		<property name="konto" column="KONTO" type="java.lang.Integer" />
+		<property name="beschreibung" column="BESCHREIBUNG" length = "200" type="java.lang.String" />
+		<property name="beschreibungId" column="BESCHREIBUNGID" length = "200" type="java.lang.Integer" />		
+		<property name="bezeichnung" column="BEZEICHNUNG" length = "200" type="java.lang.String" />
+		<property name="betrag" column="BETRAG" length = "200" type="java.lang.Double" />
+		<property name="tax" column="TAX" length = "200" type="java.lang.Double" />
+		<property name="taxamount" column="TAXAMOUNT" length = "200" type="java.lang.Double" />
+		<property name="adddata" column="ADDDATA" type="java.lang.Boolean" />
+		<property name="salesId" column="SALSE_NUMMER" type="java.lang.Integer" />			
+	</class>
+</hibernate-mapping>

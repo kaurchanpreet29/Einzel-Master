@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+	<class lazy="false" name="com.floreantpos.model.TSEReceiptData" table="TSE_RECEIPT">
+
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>		
+		<property name="transaction" column="TX_NR" type="java.lang.Integer" />			
+		<property name="start" column="STARTDATE" type="java.util.Date" />
+		<property name="finish" column="FINISHDATE" type="java.util.Date" />
+		<property name="signatureCount" column="SINATURE_COUNT" type="java.lang.Integer" />		
+		<property name="serialNumber" column="SERIAL_NUMBER"  length="600" type="java.lang.String" />
+		<property name="signature" column="SIGNATURE"  length="1000" type="java.lang.String" />
+		<property name="timeFormat" column="TIME_FORMAT"  length="1000" type="java.lang.String" />
+		<property name="signatureAlgorithm" column="SIG_ALGO"  length="1000" type="java.lang.String" />
+		<property name="signaturePublicKey" column="SIG_PUB_KEY"  length="1000" type="java.lang.String" />
+		<property name="clientID" column="CLEINT_ID"  type="java.lang.String" />
+		<property name="erstbestellung" column="ERSETE_BESTELLUNG" length="1000" type="java.lang.String" />
+		<property name="QRCode" column="QR_CODE"  length="1000" type="java.lang.String" />
+		<property name="latestRevision" column="LAT_REV_NR"  length="50" type="java.lang.String" />
+		
+	</class>
+</hibernate-mapping>

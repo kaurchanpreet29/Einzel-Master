@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" layoutX="-3.0" maxHeight="768.0" maxWidth="1024.0" minHeight="600.0" minWidth="800.0" prefHeight="768.0" prefWidth="1024.0" text="Grosshandel">
+        <content>
+          <AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1100.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="51.0" layoutY="601.0" prefHeight="155.0" prefWidth="999.0" style="-fx-background-color: #bbbfbc;" />
+                  <Button id="btnPosTerminal" fx:id="btnPosTerminal" layoutX="52.0" layoutY="30.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="400.0" style="-fx-background-color: #ffffff;" text="POS Terminal" />
+                  <Button fx:id="btnAddItem" layoutX="1015.0" layoutY="91.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="asdfasdf" />
+                  <Button fx:id="btnBarcode" layoutX="576.0" layoutY="91.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="adsfasd" />
+                  <Button fx:id="btnAddCustomer" layoutX="491.0" layoutY="91.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="asdfasdf" />
+                  <Button fx:id="btnCustomer" layoutX="52.0" layoutY="91.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="adsfasdf" />
+                  <Button fx:id="btnLocation" layoutX="576.0" layoutY="31.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="ajkhf" />
+                  <Button fx:id="btnInfo" layoutX="1015.0" layoutY="31.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #ffffff; -fx-border-color: #e8e6e6;" text="asdfasdf" />
+                  <ComboBox fx:id="cmbLocation" layoutX="613.0" layoutY="31.0" prefHeight="35.0" prefWidth="400.0" promptText="asdfasdf" style="-fx-border-color: #e8e6e6; -fx-background-color: #ffffff;" />
+                  <ComboBox fx:id="cmbSearchCustomer" layoutX="89.0" layoutY="91.0" prefHeight="35.0" prefWidth="400.0" promptText="asdfasdf" style="-fx-border-color: #e8e6e6; -fx-background-color: #ffffff;" />
+                  <TextField fx:id="tfItemSearch" layoutX="613.0" layoutY="91.0" prefHeight="35.0" prefWidth="400.0" />
+                  <TableView fx:id="tableView" layoutX="53.0" layoutY="135.0" prefHeight="456.0" prefWidth="997.0">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="56.0" text="Id" />
+                      <TableColumn fx:id="colProduct" prefWidth="382.0" text="Product" />
+                      <TableColumn fx:id="colQuantity" minWidth="6.0" prefWidth="132.0" text="Quantitiy" />
+                        <TableColumn fx:id="colPriceIncTax" prefWidth="182.0" text="Price inc. tax" />
+                        <TableColumn fx:id="colSubtotal" prefWidth="185.0" text="Subtotal" />
+                        <TableColumn fx:id="colDelete" prefWidth="59.0" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

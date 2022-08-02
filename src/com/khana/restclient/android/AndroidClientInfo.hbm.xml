@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.khana.restclient.android">
+	<class lazy="false" name="com.khana.restclient.android.AndroidClientInfo" table="CLIENT_INFO">
+		<id column="ID" name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		<property name="clientIp" column="DEVICE_IP" type="java.lang.String" />
+		<property name="clientPort" column="DEVICE_PORT" type="java.lang.String" />		
+		<property name="clientId" column="DEVICE_ID" type="java.lang.String" />
+		<property name="activeDate" column="ACTIVE_DATE" length="10" type="java.util.Date" />
+		<property name="aliasName" column="ALIAS_NAME" type="java.lang.String" />		
+	</class>
+</hibernate-mapping>
