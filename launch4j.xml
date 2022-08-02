@@ -1,0 +1,19 @@
+/*
+ * Copyright 2005 Sun Microsystems, Inc. All rights reserved.
+ * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+
+package javacard.framework;
+
+/**
+ * The <code>CardRuntimeException</code> class defines a field
+ * <code>reason </code>and two accessor methods <code>
+ * getReason()</code> and
+ * <code>setReason()</code>. The <code>reason</code> field encapsulates an
+ * exception cause identifier in the Java Card platform. All Java Card platform
+ * unchecked Exception classes should extend <code>CardRuntimeException</code>.
+ * This class also provides a resource-saving mechanism (<code>throwIt()</code>
+ * method) for using a Java Card runtime environment-owned instance of this
+ * class.
+ * <p>
+ * Even if a tran

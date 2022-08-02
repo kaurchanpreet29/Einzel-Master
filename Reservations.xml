@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Reservations>
+    <reservation>
+        <date>10.06.2015</date>
+        <email>ram@ha.com</email>
+        <message>her</message>
+        <name>Raman</name>
+        <person>5</person>
+        <telefon>0175</telefon>
+        <time>11:15</time>
+    </reservation>
+    <reservation>
+        <date>05.06.2015</date>
+        <email>devrayan@gmail.com</email>
+        <message>Please allocate</message>
+        <name>Deivarayan</name>
+        <person>5</person>
+        <telefon>017625459532</telefon>
+        <time>13:10</time>
+    </reservation>
+    <reservation>
+        <date>05.06.2015</date>
+        <email>suresh@gmail.com</email>
+        <message>hello buddy</message>
+        <name>Suresh</name>
+        <person>1</person>
+        <telefon>0176</telefon>
+        <time>06-15</time>
+    </reservation>
+</Reservations>

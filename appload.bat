@@ -1,0 +1,1 @@
+start javaw -jar -Xms1024M -Xmx1600M Khana-einzel.jar

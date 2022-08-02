@@ -1,0 +1,88 @@
+KHANA API [POST], [GET] & [DELETE]
+Hearders for POST is: Content-Type:application/json & Body=raw
+
+Users API
+///[GET] http://192.168.0.25:8080/user/all
+///[GET] http://192.168.0.25:8080/user/id?id=120
+///[GET] http://192.168.0.25:8080/user/firstName?firstName=Administrator
+
+///[POST] http://192.168.0.25:8080/user/password
+----Request Body should contain 4 digits password
+
+///[POST] http://192.168.0.25:8080/user/save
+----Request Body should be json format
+
+///[DELETE] http://192.168.0.25:8080/id?id=124
+
+Table API
+///[GET] http://192.168.0.25:8080/shoptable/all
+///[GET] http://192.168.0.25:8080/shoptable/id?id=124 //id of the table it is not table number
+///[GET] http://192.168.0.25:8080/shoptable/number?number=102 //it is table number
+///[GET] http://192.168.0.25:8080/shoptable/floor?floorNumber=1 //1 to 8 Dine_IN, 9=pickup, 10=Homedelivery
+///[DELETE] http://192.168.0.25:8080/shoptable/id?id=102 //id of the table it is not table number
+///[POST] http://192.168.0.25:8080/shoptable/save //----Request Body should be json format
+
+Menu API - Category
+///[GET] http://192.168.0.25:8080/category/all
+///[GET] http://192.168.0.25:8080/category?type=true or false // true=HOMEDELIVERY false=DINE_IN
+///[POST] http://192.168.0.25:8080/category/save //----Request Body should be json format
+///[DELETE] http://192.168.0.25:8080/category/delete?id=12 // Carefull it will delete all groups & items associated
+
+Menu API - group
+///[GET] http://192.168.0.25:8080/group/all
+///[GET] http://192.168.0.25:8080/group/category?id=120 // Category id
+///[POST] http://192.168.0.25:8080/group/save //----Request Body should be json format
+///[DELETE] http://192.168.0.25:8080/group/delete?id=12 // Carefull it will delete all items associated
+
+
+Menu API - Item
+///[GET] http://192.168.0.25:8080/item/all?type=false
+///[GET] http://192.168.0.25:8080/item/category?id=120  //category id
+///[GET] http://192.168.0.25:8080/item/group?id=120 //group id
+///[POST] http://192.168.0.25:8080/item/save //----Request Body should be json format
+///[DELETE] http://192.168.0.25:8080/item/delete?id=12 // it will delete that item
+
+Menu API - Cooking Instructions
+///[GET] http://192.168.0.25:8080/cookinginstruction/all
+///[POST] http://192.168.0.25:8080/cookinginstruction/save //----Request Body should be json format
+///[DELETE] http://192.168.0.25:8080/cookinginstruction/delete?id=12 // Carefull it will delete all items associated
+
+Tickets API
+///[GET] http://192.168.0.25:8080/ticket/query?startDate=18.04.2017-10:00&endDate=18.04.2017-18:00&state=1,7
+----please fix the time from 5:00 AM to next day 4:59 AM
+Paramaetres
+userName=Admin  // Firstname string
+startDate=10.06.2017-10:00
+endDate=18.04.2017-18:00
+state= 0,1,2,3,4,5,6,7,8 //0=open, 1=closed, 2=split, 3=salesreport taken, 4=sales report not taken, 5=paid, 6=deleted, 7=DINE_IN, 8=Homedelivery
+
+///[GET] http://192.168.0.25:8080/ticket/all
+
+///[GET] http://192.168.0.25:8080/ticket/id?id=145
+
+///[DELETE] http://192.168.0.25:8080/ticket/delete?id=145
+
+///[POST] http://192.168.0.25:8080/ticket/save?official=true&print=true&saveType=0
+----Request Body should be json format
+Paramaetres
+official=true or false
+print=true or false
+saveType=0 or 1 or 2 //0=saldo (default), 1=close, 2=ZWS
+paymentType=0 or 1 or 2 //0=cash (default), 1=card, 2=online
+
+///[POST] http://192.168.0.25:8080/ticket/queryOpenTicketByTableNumber?tableNumber=1  // List open tickets for the given table number
+
+Print API
+///[POST] http://192.168.0.25:8080/ticket/print?id=124&official=true
+Paramaetres
+official=true or false
+
+Creat Order: Sample json // createDate & modifiedTime is  UNIX epoch // PHP (round(microtime(true) * 1000)) Reference: https://currentmillis.com
+
+{"createDate":1497725165982,"ticketType":"DINE_IN","owner":{"autoId":1,"modifiedTime":1470138840605},"ticketItems":
+[{"itemId":420,"maximumExtras":0,"itemCount":1,"name":"Amaretto","groupName":"Liköre","tableNumber":"9","categoryName":
+"Getraenke","unitPrice":100.6,"menuItemId":4139,"taxRate":19,"beverage":true,"shouldPrintToKitchen":true,"hasModifiers":false,
+"printedToKitchen":false,"printorder":2},{"itemId":420,"maximumExtras":0,"itemCount":1,"name":"Amaretto","groupName":"Liköre",
+"tableNumber":"9","categoryName":"Getraenke","unitPrice":1.6,"menuItemId":4139,"taxRate":19,"beverage":true,
+"shouldPrintToKitchen":true,"hasModifiers":false,"printedToKitchen":false,"printorder":1}],
+"tables":[{"id":190,"number":"9","floor":8,"occupied":true}],"type":"DINE_IN"}
